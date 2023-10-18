@@ -10,6 +10,7 @@ public class BRCPage {
     public BRCPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
     @FindBy(xpath = "//a[@href='/login']")
     public WebElement loginButtonHomePage;
     @FindBy(xpath = "//*[@id='formBasicEmail']")
@@ -19,5 +20,5 @@ public class BRCPage {
     @FindBy(xpath = "//*[@type='submit']")
     public WebElement submitButton;
     @FindBy(id = "dropdown-basic-button")
-    public  WebElement kullaniciAdi;
+    public WebElement kullaniciAdi;
 }

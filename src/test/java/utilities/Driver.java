@@ -26,10 +26,10 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
-               // case "headless-chrome":
-               //     WebDriverManager.chromedriver().setup();
-               //     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
-               //     break;
+                // case "headless-chrome":
+                //     WebDriverManager.chromedriver().setup();
+                //     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                //     break;
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();

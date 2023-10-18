@@ -8,6 +8,7 @@ import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+
 public class AmazonStepDefinitions {
     AmazonPage amazonPage = new AmazonPage();
 
@@ -16,7 +17,6 @@ public class AmazonStepDefinitions {
         Driver.getDriver().get(ConfigReader.getProperty("amazonURL"));
 
     }
-
     @Then("kullanici Nutella icin arama yapar")
     public void kullanici_nutella_icin_arama_yapar() {
         amazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
@@ -45,8 +45,7 @@ public class AmazonStepDefinitions {
         String arananKelime = "Java";
         Assert.assertTrue(actualResult.contains(arananKelime));
     }
-
-
+  
     @Then("kullanici iphone icin arama yapar")
     public void kullaniciIphoneIcinAramaYapar() {
         amazonPage.aramaKutusu.sendKeys("iphone", Keys.ENTER);
@@ -67,13 +66,10 @@ public class AmazonStepDefinitions {
         String actualResult = amazonPage.sonucYazisi.getText();
         Assert.assertTrue(actualResult.contains(arananKelime));
     }
-
     @Given("kullanici {string} anasayfasinda") //amazonURL
     public void kullniciAnasayfasinda(String istenenURL) {
         Driver.getDriver().get(ConfigReader.getProperty(istenenURL));
     }
-
-
     @Then("kullanici {int} sn bekler")
     public void kullaniciSnBekler(int istenenSaniye) {
         try {

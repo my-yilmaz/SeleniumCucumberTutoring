@@ -5,5 +5,3 @@ Feature: US1003 kullanici parametre kullanarak arama yapar
     And kullanici "Java" icin arama yapar
     And sonuclarin "Java" icerdigini test eder
     Then sayfayi kapatir
-
-

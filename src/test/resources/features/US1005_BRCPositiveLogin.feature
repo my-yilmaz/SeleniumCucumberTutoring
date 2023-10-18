@@ -9,4 +9,3 @@ Feature: US1005 BRC Positive Login
     And Login butonuna basar
     Then sayfaya giris yaptigini kontrol eder
     And sayfayi kapatir
-

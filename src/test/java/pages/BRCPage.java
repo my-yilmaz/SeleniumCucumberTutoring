@@ -6,7 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class BRCPage {
-    public BRCPage(){
+
+    public BRCPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
     @FindBy(xpath = "//a[@href='/login']")

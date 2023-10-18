@@ -14,7 +14,7 @@ Feature: US1006 BRC Negative Login
     And sayfayi kapatir
 
   @brc2
-  Scenario: TC02 kullanici yanlis pasword ile giris yapamaz
+  Scenario: TC02 kullanici yanlis password ile giris yapamaz
     And gecerli username girer
     And gecersiz password girer
     And Login butonuna basar
@@ -22,7 +22,7 @@ Feature: US1006 BRC Negative Login
     And sayfayi kapatir
 
   @brc3
-  Scenario: TC03 kullanici yanlis email ve yanlis pasword ile giris yapamaz
+  Scenario: TC02 kullanici yanlis email ve yanlis password ile giris yapamaz
     And gecersiz email girer
     And gecersiz password girer
     And Login butonuna basar

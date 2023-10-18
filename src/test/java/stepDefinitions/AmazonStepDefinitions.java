@@ -17,6 +17,7 @@ public class AmazonStepDefinitions {
         Driver.getDriver().get(ConfigReader.getProperty("amazonURL"));
 
     }
+
     @Then("kullanici Nutella icin arama yapar")
     public void kullanici_nutella_icin_arama_yapar() {
         amazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
@@ -45,7 +46,7 @@ public class AmazonStepDefinitions {
         String arananKelime = "Java";
         Assert.assertTrue(actualResult.contains(arananKelime));
     }
-  
+
     @Then("kullanici iphone icin arama yapar")
     public void kullaniciIphoneIcinAramaYapar() {
         amazonPage.aramaKutusu.sendKeys("iphone", Keys.ENTER);
@@ -57,23 +58,27 @@ public class AmazonStepDefinitions {
         String arananKelime = "iphone";
         Assert.assertTrue(actualResult.contains(arananKelime));
     }
+
     @Given("kullanici {string} icin arama yapar")
     public void kullanici_icin_arama_yapar(String arananKelime) {
-        amazonPage.aramaKutusu.sendKeys(arananKelime,Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys(arananKelime, Keys.ENTER);
     }
+
     @Given("sonuclarin {string} icerdigini test eder")
     public void sonuclarin_icerdigini_test_eder(String arananKelime) {
         String actualResult = amazonPage.sonucYazisi.getText();
         Assert.assertTrue(actualResult.contains(arananKelime));
     }
+
     @Given("kullanici {string} anasayfasinda") //amazonURL
     public void kullniciAnasayfasinda(String istenenURL) {
         Driver.getDriver().get(ConfigReader.getProperty(istenenURL));
     }
+
     @Then("kullanici {int} sn bekler")
     public void kullaniciSnBekler(int istenenSaniye) {
         try {
-            Thread.sleep(istenenSaniye*1000);
+            Thread.sleep(istenenSaniye * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

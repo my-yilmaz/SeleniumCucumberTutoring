@@ -8,22 +8,27 @@ import utilities.ConfigReader;
 
 public class BRCStepdefinitions {
     BRCPage brcPage = new BRCPage();
+
     @Then("Log in yazisina tiklar")
     public void log_in_yazisina_tiklar() {
-       brcPage.loginButtonHomePage.click();
+        brcPage.loginButtonHomePage.click();
     }
+
     @Then("gecerli username girer")
     public void gecerli_username_girer() {
         brcPage.usernameBox.sendKeys(ConfigReader.getProperty("brcEmail"));
     }
+
     @Then("gecerli password girer")
     public void gecerli_password_girer() {
-       brcPage.passwordBox.sendKeys(ConfigReader.getProperty("brcPassword"));
+        brcPage.passwordBox.sendKeys(ConfigReader.getProperty("brcPassword"));
     }
+
     @Then("Login butonuna basar")
     public void login_butonuna_basar() {
-       brcPage.submitButton.click();
+        brcPage.submitButton.click();
     }
+
     @Then("sayfaya giris yaptigini kontrol eder")
     public void sayfaya_giris_yaptigini_kontrol_eder() {
         Assert.assertTrue(brcPage.kullaniciAdi.isDisplayed());

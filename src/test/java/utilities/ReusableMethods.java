@@ -144,4 +144,51 @@ public class ReusableMethods {
         });
         return element;
     }
+
+    //Click Method
+    public static void click(WebElement element) {
+        try {
+            element.click();
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+            js.executeScript("arguments[0].click();", element);
+        }
+    }
+
+    //JS Scroll
+    public static void scroll(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    //JS Sayfa Sonu Scroll
+    public static void scrollEnd() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+    //JS Sayfa Başı Scroll
+    public static void scrollHome() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+    //JS SendKeys
+    public static void sendKeysJS(WebElement element, String text) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].value='" + text + "'", element);
+    }
+
+    //JS SetAttributeValue
+    public static void setAttributeJS(WebElement element, String text) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
+    }
+
+    //JS GetAttributeValue
+    public static void getValueByJS(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+        System.out.println("Attribute Value: = " + attribute_Value);
+    }
 }

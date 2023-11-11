@@ -38,7 +38,6 @@ public class BRCStepdefinitions {
     @And("gecersiz email girer")
     public void gecersizEmailGirer() {
         brcPage.usernameBox.sendKeys(ConfigReader.getProperty("fakeEmail"));
-
     }
 
     @Then("sayfaya giris yapilamadigini test eder")
@@ -50,4 +49,13 @@ public class BRCStepdefinitions {
     public void gecersizPasswordGirer() {
         brcPage.passwordBox.sendKeys(ConfigReader.getProperty("fakePassword"));
     }
+
+    @And("gecersiz email olarak {string} girer")
+    public void gecersizEmailOlarakGirer(String istenenEmail) {
+        brcPage.usernameBox.sendKeys(istenenEmail);
+    }
+
+    @And("gecersiz sifre olarak {string} girer")
+    public void gecersizSifreOlarakGirer(String istenenPassword) {
+        brcPage.passwordBox.sendKeys(istenenPassword);}
 }

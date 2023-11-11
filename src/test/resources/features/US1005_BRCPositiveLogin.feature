@@ -1,7 +1,7 @@
 @brcGenel
 Feature: US1005 BRC Positive Login
 
-  @brc
+  @brc @test1
   Scenario: TC01 kullanici gecerli bilgilerle giris yapar
     Given kullanici "brcURL" anasayfasinda
     Then Log in yazisina tiklar
